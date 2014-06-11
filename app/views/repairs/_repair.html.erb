@@ -1,0 +1,9 @@
+<tr>
+	<td><%= repair.date %></td>
+	<td><%= repair.cost %></td>
+	<td><%= repair.shop %></td>
+	<td><%= repair.work_done %></td>
+	<td><%= repair.mileage %></td>
+    <td><%= link_to 'Delete', [repair.car, repair], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<br />
+</tr>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  car_id: 1
+  date: 2014-01-27
+  cost: 9.99
+  shop: MyString
+  work_done: MyString
+  mileage: 1
+
+two:
+  car_id: 1
+  date: 2014-01-27
+  cost: 9.99
+  shop: MyString
+  work_done: MyString
+  mileage: 1

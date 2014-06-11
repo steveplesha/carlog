@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= "#{@car.year} #{@car.make} #{@car.model}" %></h1>
+
+<h2>Repair Log</h2>
+<%= render @car.repairs %>
+
+<%= render "repairs/form" %>
+
+<%= link_to 'Edit Car', edit_car_path(@car) %> |
+<%= link_to 'Back to car list', cars_path %>

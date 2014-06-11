@@ -1,0 +1,27 @@
+<h1>Listing repairs</h1>
+
+<table>
+  <tr>
+    <th>Car ID</th>
+    <th>Date</th>
+    <th>Cost</th>
+    <th>Shop</th>
+    <th>Work done</th>
+    <th>Mileage</th>
+  </tr>
+
+<% @repairs.each do |repair| %>
+  <tr>
+    <td><%= repair.car_id %></td>
+    <td><%= repair.date %></td>
+    <td><%= repair.cost %></td>
+    <td><%= repair.shop %></td>
+    <td><%= repair.work_done %></td>
+    <td><%= repair.mileage %></td>
+	<td><%= link_to 'Edit Repair',  edit_car_repair_path(@car) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
