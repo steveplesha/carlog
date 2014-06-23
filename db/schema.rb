@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140128184616) do
+ActiveRecord::Schema.define(:version => 20140623042724) do
 
   create_table "cars", :force => true do |t|
     t.datetime "created_at",   :null => false
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(:version => 20140128184616) do
     t.string   "vehicle_type"
     t.string   "make"
     t.string   "model"
+    t.integer  "user_id"
   end
+
+  add_index "cars", ["user_id"], :name => "index_cars_on_user_id"
 
   create_table "repairs", :force => true do |t|
     t.integer  "car_id"
@@ -34,5 +37,24 @@ ActiveRecord::Schema.define(:version => 20140128184616) do
   end
 
   add_index "repairs", ["car_id"], :name => "index_repairs_on_car_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

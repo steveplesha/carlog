@@ -1,11 +1,11 @@
 Cartracker::Application.routes.draw do
+  devise_for :users
+
   resources :cars do
 	resources :repairs
   end
-
-
   
-  root :to => 'cars#index'
+  root to: 'cars#index'
 
 
   # The priority is based upon order of creation:
